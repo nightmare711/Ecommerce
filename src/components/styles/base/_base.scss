@@ -1,0 +1,16 @@
+$breakpoint-desktop: 1280px;
+$breakpoint-tablet-horizontal: 1024px;
+$breakpoint-tablet-vertical: 768px;
+$breakpoint-mobile-vertical: 400px;
+$breakpoint-mobile-horizontal: 640px;
+
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .max-w-screen-xl {
+        max-width: $breakpoint-desktop;
+        width:100%;
+    }
+}

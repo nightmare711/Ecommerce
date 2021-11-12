@@ -16,7 +16,7 @@ export const Header = () => {
         <div className='header__search'>
           <img src='https://onemart.boostifythemes.com/gadget/wp-content/uploads/sites/4/2021/05/logo_white.png' alt='logo' />
           <div className='search-container'>
-            <input type='text' placeholder='' />
+            <input type='text' placeholder='Search for product...' />
             <select>
               <option>
                 All Categories
@@ -35,7 +35,7 @@ export const Header = () => {
               <FavoriteIcon />
             </div>
             <div className='icon'>
-            0,00$
+              0,00$
               <CartIcon />
             </div>
           </div>

@@ -1,0 +1,39 @@
+.banner {
+    width:100vw;
+    height: 570px;
+    display: flex;
+    flex-direction: row;
+    background-color: #F0F0F0;
+    padding: 0px 40px;
+    .banner-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        height:100%;
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-right: 100px;
+        max-width: 40%;
+        &--sub {
+            font-size: 13px;
+            font-weight: 300;
+            color:#2f2f30;
+        }
+        &--title {
+            font-size: 54px;
+            font-weight: 400;
+        }
+        .btn-primary {
+            margin-top:40px;
+        }
+    }
+    img {
+        width:415px;
+        height:494px;
+        justify-self: flex-end;
+        align-self: flex-end;
+    }
+}

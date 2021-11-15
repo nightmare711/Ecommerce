@@ -1,6 +1,7 @@
 import React from 'react';
 import { Banner } from './components/Banner';
 import { Categories } from './components/Categories';
+import { BestSeller } from './components/BestSeller';
 
 
 export const HomePage = () => {
@@ -8,6 +9,7 @@ export const HomePage = () => {
     <div className='homepage'>
       <Banner />
       <Categories />
+      <BestSeller />
     </div>
   );
 };

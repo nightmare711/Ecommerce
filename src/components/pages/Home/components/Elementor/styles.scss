@@ -1,0 +1,51 @@
+.elementor-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+    padding: 30px 0px;
+    .elementor {
+        position:relative;
+        overflow: hidden;
+        height:100%;
+        &:hover img {
+            transform: scale(1.1);
+        }
+        img {
+            width:100%;
+            transition:all .6s;
+        }
+        &__content {
+            position: absolute;
+            top:50%;
+            left:0px;
+            height:100%;
+            padding:0px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transform: translateY(-50%);
+            width: 35%;
+            color:white;
+            &--sub {
+                font-size: 13px;
+                text-transform: uppercase;
+                font-weight: 300;
+                letter-spacing: 5px;
+                line-height: 20px;
+            }
+            &--title {
+                font-size: 30px;
+                font-weight: 600;
+                margin: 15px 0px;
+                text-transform: capitalize;
+            }
+            &--check {
+                font-size: 13px;
+                display: block;
+                padding-bottom:8px;
+                border-bottom:1px solid white;
+                width: fit-content;
+            }
+        }
+    }
+}

@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import { Header, Nav } from './components';
+import { Header, Nav, Footer } from './components';
 import { Switch, Route } from 'react-router-dom'
 
 const HomePage = lazy(() => import('./pages/Home'))
@@ -13,6 +13,7 @@ function App() {
         <Route path='/' component={HomePage} />
         {/*<Route path='/' component={Detail}/>*/}
       </Switch>
+      <Footer/>
     </Suspense>
   );
 }

@@ -3,6 +3,7 @@ import { Banner } from './components/Banner';
 import { Categories } from './components/Categories';
 import { BestSeller } from './components/BestSeller';
 import { Elementor } from './components/Elementor';
+import { NewProduct } from './components/NewProduct';
 
 
 export const HomePage = () => {
@@ -13,6 +14,7 @@ export const HomePage = () => {
       <BestSeller />
       <Elementor />
       <BestSeller />
+      <NewProduct />
     </div>
   );
 };

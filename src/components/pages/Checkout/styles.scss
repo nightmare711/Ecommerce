@@ -1,0 +1,148 @@
+.checkout {
+  width: 80%;
+  margin: 0 auto;
+}
+.title-checkout {
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  line-height: 1.4em;
+  color: #292929;
+  text-align: left;
+}
+.coupon {
+  background: #f3f3f3;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 13px 25px;
+  background-color: #f3f3f3;
+  margin-bottom: 15px;
+}
+.submitcoupon {
+  display: flex;
+}
+
+.coupon-input .input {
+  width: 50%;
+  padding-right: 30px;
+  display: block;
+  margin-bottom: 17px;
+}
+.coupon-input .button {
+  width: 50%;
+  float: right;
+  display: block;
+}
+.input-text {
+  border: solid 1px #e0e0e0;
+  height: 40px;
+  padding: 0 0 0 20px;
+  float: left;
+  width: 97%;
+  border-radius: 3px;
+  transition-duration: 0.3s;
+  margin-bottom: 6px;
+}
+.input-text:active {
+  border-color: black;
+}
+.btn {
+  border-radius: 3px;
+  color: #fff;
+  border: 0;
+  height: 40px;
+  padding: 0 20px;
+  margin-right: 10px;
+  background-color: #2a5cb8;
+}
+.btn:hover {
+  background-color: #c92736;
+}
+.checkout-main {
+  display: flex;
+  margin-bottom: 50px;
+}
+.checkout-main .space-order {
+  width: 8%;
+}
+.bill-detail {
+  width: 60%;
+}
+.order {
+  width: 32%;
+  float: left;
+}
+.Subtitle {
+  font-weight: 500;
+  font-size: 15px;
+  text-transform: uppercase;
+  margin: 20px 0;
+}
+.checkout .lable {
+  margin-bottom: 10px;
+}
+.checkout .lable-text {
+  color: #505050;
+  font-size: 14px;
+}
+.checkout .lable-icon {
+  color: red;
+  font-size: 13px;
+}
+.checkout .option {
+  padding: 10px 0;
+}
+.checkout .guestname {
+  display: flex;
+}
+.checkout .guestname .name {
+  width: 45%;
+}
+.checkout .namespace {
+  width: 8%;
+}
+.additional-info {
+  margin: 100px 0;
+}
+.additional-info .info {
+  height: 80px;
+}
+.orderbox {
+  margin-top: 50px;
+  border: solid 1px #e0e0e0;
+  padding: 10px 30px;
+  border-radius: 3px;
+  font-size: 14px;
+  text-align: left;
+  font-weight: 300;
+}
+.orderbox tr {
+  border-bottom: 1px solid #dddddd;
+  color: #2f2f30;
+  font-size: 14px;
+  letter-spacing: 0.26px;
+  font-weight: 400;
+}
+.orderbox .item-card {
+  border: none;
+}
+.orderbox th,
+td {
+  border: 0;
+  padding: 13px 0;
+  vertical-align: top;
+}
+.orderbox .product-total {
+  text-align: right;
+}
+.orderbox .total-cost {
+  color: #4e69b9;
+  font-size: 15px;
+  font-weight: 700;
+}
+.orderbox .product-quantity {
+  color: #959595;
+}
+.order .btn {
+  width: 100%;
+}

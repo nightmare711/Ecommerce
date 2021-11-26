@@ -1,0 +1,40 @@
+.related__post__img {
+  margin-bottom: 10px;
+}
+.related__post__img img {
+  height: 180px;
+  width: 240px;
+}
+.post__info {
+  width: 240px;
+  text-align: center !important;
+}
+.post__info .post__tittle {
+  font-size: 18px;
+  cursor: pointer;
+}
+.post__info .post__tittle:hover {
+  color: #2a5cb8;
+}
+.date__group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+}
+.date__group p {
+  font-size: 13px;
+  color: #757575;
+}
+.date__group a {
+  font-size: 13px;
+  color: #757575;
+  cursor: pointer;
+}
+.date__group a:hover {
+  color: #2a5cb8;
+}
+.related__product__group {
+  display: flex;
+  justify-content: space-between;
+}

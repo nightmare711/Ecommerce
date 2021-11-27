@@ -1,0 +1,31 @@
+.recent__post__container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  align-items: center;
+}
+.recent__post__img {
+  margin-right: 15px;
+}
+.recent__post__img img {
+  width: 80px;
+  height: 80px;
+  transition: transform 0.2s;
+  transform-origin: center;
+  transform: scale(0.9);
+}
+.recent__post__img img:hover {
+  transform: scale(1);
+}
+.post__descrip a {
+  font-size: 13px;
+  color: #2f2f30;
+  cursor: pointer;
+}
+.post__descrip a:hover {
+  color: #2a5cb8;
+}
+.post__descrip p {
+  font-size: 12px;
+  color: #505050;
+}

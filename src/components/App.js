@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 
 const HomePage = lazy(() => import('./pages/Home'))
 const Detail = lazy(() => import('./pages/DetailProduct'))
+const Blog = lazy(() => import('./pages/Blog'))
 const Checkout = lazy(() => import('./pages/Checkout'))
 
 const Overlay1 = lazy(() => import('./pages/Overlay/Overlay1')) 
@@ -18,6 +19,8 @@ function App() {
       <Nav />
       <Switch>
         {/* <Route path='/' component={HomePage} /> */}
+        {/*<Route path='/' component={Detail}/>*/}
+        <Route path='/' component={Blog}/>
         <Route path='/' component={Checkout}/>
 
 

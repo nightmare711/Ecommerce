@@ -28,6 +28,9 @@
             display: flex;
             flex-direction: row;
             font-size: 14px;
+            .active {
+                color:#2a5cb8;
+            }
             li {
                 margin-left:40px;
                 color:#757575;

@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './styles.scss';
 
 export const CardProduct = ({ product }) => {
@@ -11,11 +12,11 @@ export const CardProduct = ({ product }) => {
       </div>
       <div className='card-product__content' >
         <span className='type'>
-          {product.type}
+          {product.product_type}
         </span>
-        <span className='name'>
+        <Link to={`/products/${product._id}`}className='name'>
           {product.name}
-        </span>
+        </Link>
         <span className='price'>{'$'}{product.price}</span>
         <div className='card-btn'>
             Add to cart

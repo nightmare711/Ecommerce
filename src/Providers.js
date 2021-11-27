@@ -2,14 +2,19 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { DataContextProvider } from './components/contexts/DataContext';
+import { QueryClient, QueryClientProvider } from 'react-query';
+
+const queryClient = new QueryClient();
 
 
 export const Providers = ({children}) => {
   return (
     <DataContextProvider>
-      <Router>
-        {children}
-      </Router>
+      <QueryClientProvider client={queryClient}>
+        <Router>
+          {children}
+        </Router>
+      </QueryClientProvider>
     </DataContextProvider>  
   );
 };

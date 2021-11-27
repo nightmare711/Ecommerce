@@ -7,6 +7,9 @@ import 'react-toastify/dist/ReactToastify.css'
 const HomePage = lazy(() => import('./pages/Home'))
 const Detail = lazy(() => import('./pages/DetailProduct'))
 const Blog = lazy(() => import('./pages/Blog'))
+const FirstBlog = lazy(() => import('./pages/Blog/FisrtBlog'))
+const SecondBlog = lazy(() => import('./pages/Blog/SecondBlog'))
+const ThirdBlog = lazy(() => import('./pages/Blog/ThirdBlog'))
 const Checkout = lazy(() => import('./pages/Checkout'))
 const Products = lazy(() => import('./pages/Products'))
 
@@ -25,6 +28,9 @@ function App() {
         {/* <Route path='/' component={HomePage} /> */}
         {/*<Route path='/' component={Detail}/>*/}
         <Route path='/blog/1' component={Blog}/>
+        {/* <Route path='/blog/1' component={FirstBlog}/>
+        <Route path='/blog/1' component={SecondBlog}/>
+        <Route path='/blog/1' component={ThirdBlog}/> */}
         {/* <Route path='/' component={Checkout}/> */}
 
         <Route path='/products' exact component={Products} />

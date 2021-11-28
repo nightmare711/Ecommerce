@@ -25,7 +25,8 @@ function App() {
       <Switch>
         {/* <Route path='/' component={HomePage} /> */}
         {/*<Route path='/' component={Detail}/>*/}
-        <Route path='/' component={SmallCart}/>
+        {/* <Route path='/' component={SmallCart}/> */}
+        <Route path='/' component={Cart} />
         <Route path='/blog/1' component={Blog}/>
         {/* <Route path='/' component={Checkout}/> */}
 

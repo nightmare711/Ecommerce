@@ -1,6 +1,3 @@
-.cart__container {
-  padding: 0 150px;
-}
 .cart__header {
   color: #292929;
   font-size: 30px;
@@ -105,4 +102,16 @@
 }
 .cart__details .cart__total button:hover {
   background-color: #c92736;
+}
+.cart__total__payment {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgb(216, 216, 216);
+  margin-bottom: 10px;
+}
+.cart__total__payment p {
+  font-size: 15px;
+}
+.total__money {
+  color: #2a5cbb;
 }

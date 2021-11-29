@@ -15,6 +15,7 @@ const Products = lazy(() => import('./pages/Products'))
 
 const Overlay1 = lazy(() => import('./pages/Overlay/Overlay1')) 
 const Overlay2 = lazy(() => import('./pages/Overlay/Overlay2')) 
+const SmallCart = lazy(() => import('./pages/Overlay/CartOverlay')) 
 
 const Cart = lazy(() => import('./pages/Cart'))
 
@@ -27,17 +28,19 @@ function App() {
       <Switch>
         {/* <Route path='/' component={HomePage} /> */}
         {/*<Route path='/' component={Detail}/>*/}
+        {/* <Route path='/' component={SmallCart}/> */}
+        <Route path='/' component={Cart} />
         <Route path='/blog/1' component={Blog}/>
         {/* <Route path='/blog/1' component={FirstBlog}/>
         <Route path='/blog/1' component={SecondBlog}/>
         <Route path='/blog/1' component={ThirdBlog}/> */}
         {/* <Route path='/' component={Checkout}/> */}
 
-        <Route path='/products' exact component={Products} />
+        {/* <Route path='/products' exact component={Products} />
         <Route path={'/products/:id'} exact component={Detail} />
         <Route path={'/products/type/:type'} exact component={Products} />
         <Route path='/' component={HomePage} />
-        <Route path='/' component={Cart} />
+        <Route path='/' component={Cart} /> */}
      </Switch>
      <ToastContainer
 				position='bottom-right'

@@ -1,9 +1,11 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useHandleAddCart } from '../../services/cart';
 import './styles.scss';
 
 export const CardProduct = ({ product }) => {
+  const onAddToCart = useHandleAddCart();
   return (
     <div className='card-product'>
       <div className='card-product__img'>
@@ -18,7 +20,7 @@ export const CardProduct = ({ product }) => {
           {product.name}
         </Link>
         <span className='price'>{'$'}{product.price}</span>
-        <div className='card-btn'>
+        <div onClick={() => onAddToCart(product)} className='card-btn'>
             Add to cart
         </div>
       </div>

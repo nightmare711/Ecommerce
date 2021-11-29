@@ -1,0 +1,1 @@
+export const WF = '0x7e10d39191751770776cc639edfd37e90389ef70';

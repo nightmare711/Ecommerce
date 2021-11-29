@@ -54,6 +54,7 @@
   padding: 0 20px;
   margin-right: 10px;
   background-color: #2a5cb8;
+  cursor: pointer;
 }
 .btn:hover {
   background-color: #c92736;
@@ -126,6 +127,9 @@
 .orderbox .item-card {
   border: none;
 }
+.orderbox .product-qty {
+  text-align: center;
+}
 .orderbox th,
 td {
   border: 0;
@@ -133,7 +137,7 @@ td {
   vertical-align: top;
 }
 .orderbox .product-total {
-  text-align: right;
+  text-align: left;
 }
 .orderbox .total-cost {
   color: #4e69b9;
@@ -143,6 +147,15 @@ td {
 .orderbox .product-quantity {
   color: #959595;
 }
+.orderbox .method {
+  margin-bottom: 10px;
+}
+.orderbox .method select {
+  width: 100%;
+  height: 40px;
+  text-align: center;
+}
 .order .btn {
   width: 100%;
+  cursor: pointer;
 }

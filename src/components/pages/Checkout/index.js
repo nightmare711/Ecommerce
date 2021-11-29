@@ -146,6 +146,7 @@ export const Checkout = () => {
                 <thead>
                   <tr>
                     <th className='product-name'>Product</th>
+                    <th className='product-qty'>Quantity</th>
                     <th className='product-total'>Subtotal</th>
                   </tr>
                 </thead>
@@ -156,6 +157,9 @@ export const Checkout = () => {
                         {item.name}
                         <strong className='product-quantity'>&nbsp;x&nbsp;{item.quantity}</strong>
                       </td>
+                      <td className='product-qty'>
+                        <span>{item.quantity}</span>
+                      </td>
                       <td className='product-total'>
                         <span>${item.price}.00</span>
                       </td>
@@ -163,20 +167,22 @@ export const Checkout = () => {
                   ))}                               
                 </tbody>
                 <tfoot>
-                  <tr className='card-subtotal'>
-                    <th className='product-name'>Subtotal</th>
-                    <td className='product-total'>
-                      <span>${countSum(listProductCart)}.00</span>
-                    </td>
-                  </tr>
                   <tr className='order-total'>
                     <th className='product-name'>Total</th>
+                    <td className='product-total'></td>
                     <td className='product-total'>
                       <span className='total-cost'>${countSum(listProductCart)}.00</span>
                     </td>
                   </tr>
                 </tfoot>
               </table>
+              <div className='method'>
+                <select>
+                  <option>Choose Payment Method</option>
+                  <option>Cash On Delivery</option>
+                  <option>WAL (WastedLands)</option>
+                </select>
+              </div>
               <div className='button'>
                 <button type='submit' className='btn'>
 								Place order

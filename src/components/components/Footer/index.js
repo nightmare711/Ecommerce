@@ -1,8 +1,8 @@
+
 /* eslint-disable linebreak-style */
 import { FacebookSharp, Instagram, Twitter, YouTube } from '@mui/icons-material';
 import React from 'react';
 import './styles.scss';
-
 export const Footer = () => {
   return (
     <div className='footer'>

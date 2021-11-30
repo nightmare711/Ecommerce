@@ -1,0 +1,75 @@
+#overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.overlay__view {
+  height: auto;
+  max-width: 400px;
+  padding: 25px;
+  border-radius: 10px;
+  background-color: #29292c;
+}
+.overlay__information,
+.account__infor,
+.button__group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.overlay__information {
+  padding: 0 5px;
+}
+.overlay__information p {
+  font-size: 15px;
+  color: #ffffff;
+}
+.overlay__information .right__information span {
+  color: rgb(150, 245, 150);
+}
+.account__infor {
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  padding: 0 10px;
+  background-color: black;
+}
+.account__infor p {
+  color: #ffffff;
+  font-size: 17px;
+  text-transform: uppercase;
+}
+.account__infor .account__infor__left img {
+  width: 15px;
+  height: 15px;
+}
+.button__group button {
+  border: 5px;
+  background-color: #384150;
+  border: none;
+  border-radius: 10px;
+  min-width: 75px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+.button__group button:nth-child(4) {
+  margin-right: 0;
+}
+.button__group .view__btn,
+.copy__btn,
+.switch__btn,
+.disconnect__btn {
+  margin-top: 10px;
+  color: #ffffff;
+}
+.button__group .disconnect__btn {
+  color: #ea3222;
+}

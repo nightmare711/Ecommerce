@@ -1,0 +1,117 @@
+.cart__header {
+  color: #292929;
+  font-size: 30px;
+  margin: 9px 0 20px;
+  font-weight: 500;
+  padding: 0 0 31px;
+}
+.cart__details {
+  display: flex;
+  justify-content: center;
+}
+.cart__details .cart__form {
+  max-width: 800px;
+  margin-right: 100px;
+}
+.cart__details .cart__form thead {
+  background-color: #f3f3f3;
+}
+.cart__details .cart__form thead tr {
+  border-bottom: 1px solid black;
+}
+.cart__details .cart__form thead tr th {
+  padding: 8px 15px;
+  font-size: 13px;
+}
+.cart__details .cart__form tbody td {
+  padding: 20px 15px;
+  font-size: 13px;
+}
+.cart__details .cart__form tbody td img {
+  height: 50px;
+  width: 50px;
+}
+.cart__details .cart__form tbody td input {
+  padding: 0 35px;
+  height: 40px;
+  width: 10px;
+  text-align: center;
+}
+.cart__form .couple__container {
+  display: flex;
+  justify-content: space-between;
+}
+.cart__form .couple__container .couple input {
+  padding: 0 18px;
+  width: 100px;
+  height: 40px;
+  margin-right: 9px;
+}
+.cart__form .couple__container .couple button {
+  height: 40px;
+  width: auto;
+  padding: 0 18px;
+  background-color: #2a5cbb;
+  color: #ffffff;
+  border-radius: 3px;
+  border: none;
+}
+.cart__form .couple__container .update__Cart a {
+  font-size: 13px;
+  margin-right: 15px;
+}
+.cart__form .couple__container .update__Cart button {
+  height: 40px;
+  width: auto;
+  padding: 0 18px;
+  background-color: #2a5cbb;
+  color: #ffffff;
+  border-radius: 3px;
+  border: none;
+}
+.cart__form .couple__container .couple button:hover {
+  background-color: #c92736;
+}
+.cart__details .cart__total {
+  padding: 25px 28px 30px;
+  width: 330px !important;
+  height: auto;
+  border: 1px solid #505050;
+}
+.cart__details .cart__total h2 {
+  text-transform: uppercase;
+  font-size: 13px;
+  color: #292929;
+}
+.cart__details .cart__total table td {
+  padding: 13px 0;
+  font-size: 15px;
+  height: 30px;
+  width: 150px;
+  color: #2f2f30;
+}
+.cart__details .cart__total button {
+  background-color: #2a5cbb;
+  width: 100% !important;
+  height: 50px;
+  border-radius: 3px;
+  border: none;
+  font-size: 13px;
+  color: #ffffff;
+  cursor: pointer;
+}
+.cart__details .cart__total button:hover {
+  background-color: #c92736;
+}
+.cart__total__payment {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgb(216, 216, 216);
+  margin-bottom: 10px;
+}
+.cart__total__payment p {
+  font-size: 15px;
+}
+.total__money {
+  color: #2a5cbb;
+}

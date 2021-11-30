@@ -4,21 +4,24 @@ import { Link } from 'react-router-dom';
 import './styles.scss';
 
 const listNav = [{
-  title: 'Deal of the day',
-  to: '/',
+  title: 'Watch',
+  to: '/products/type/Watch',
 },{
-  title: 'Deal of the day',
-  to: '/',
+  title: 'TV',
+  to: '/products/type/TV',
 },{
-  title: 'Deal of the day',
-  to: '/',
+  title: 'Phone',
+  to: '/products/type/Phone',
 },{
-  title: 'Deal of the day',
-  to: '/',
+  title: 'Laptop',
+  to: '/products/type/Laptop',
 },{
-  title: 'Deal of the day',
-  to: '/',
-},];
+  title: 'More',
+  to: '/products/type/More',
+},{
+  title: 'Checkout',
+  to: '/checkout',
+}];
 
 export const Nav = () => {
   return (

@@ -1,5 +1,6 @@
 import React from 'react';
 import { CardProduct } from '../../../../components';
+import { useGetRecentProduct } from '../../../../queries/useGetProducts.queries'
 import './styles.scss';
 
 export const mockProduct = [{
@@ -29,6 +30,9 @@ export const mockProduct = [{
 }];
 
 export const BestSeller = () => {
+  
+  const [activeTab, setActiveTab] = React.useState('')
+  const recentProducts = useGetRecentProduct(activeTab)
   return (
     <div className='container'>
       <div className='max-w-screen-xl best-seller'>
@@ -36,15 +40,17 @@ export const BestSeller = () => {
           <div className='border' />
           <span className='best-seller__header--title'>Recently Added</span>
           <ul className='best-seller__header--list'>
-            <li className='item'>Top 10</li>
-            <li className='item'>Phones & Tablet</li>
-            <li className='item'>TV & Videos</li>
-            <li className='item'>Laptop</li>
+            <li onClick={() => setActiveTab('')} className={`item ${activeTab === '' ? 'active': ''}`}>Top 10</li>
+            <li onClick={() => setActiveTab('Phone')} className={`item ${activeTab === 'Phone' ? 'active': ''}`}>Phones</li>
+            <li onClick={() => setActiveTab('TV')} className={`item ${activeTab === 'TV' ? 'active': ''}`}>TV & Videos</li>
+            <li onClick={() => setActiveTab('Laptop')} className={`item ${activeTab === 'Laptop' ? 'active': ''}`}>Laptop</li>
+            <li onClick={() => setActiveTab('Watch')} className={`item ${activeTab === 'Watch' ? 'active': ''}`}>Watch</li>
+            <li onClick={() => setActiveTab('More')} className={`item ${activeTab === 'More' ? 'active': ''}`}>More</li>
           </ul>
         </div>
         <div className='best-seller__products'>
           {
-            mockProduct.map((product, index) => <CardProduct key={index} product={product} />)
+            recentProducts?.map((product, index) => <CardProduct key={index} product={product} />)
           }
         </div>
       </div>

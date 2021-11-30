@@ -14,7 +14,9 @@ export const Header = () => {
           <Link to='/partners'>Partners</Link>
         </div>
         <div className='header__search'>
-          <img src='https://onemart.boostifythemes.com/gadget/wp-content/uploads/sites/4/2021/05/logo_white.png' alt='logo' />
+          <Link to='/'>
+            <img src='https://onemart.boostifythemes.com/gadget/wp-content/uploads/sites/4/2021/05/logo_white.png' alt='logo' />
+          </Link>
           <div className='search-container'>
             <input type='text' placeholder='Search for product...' />
             <select>

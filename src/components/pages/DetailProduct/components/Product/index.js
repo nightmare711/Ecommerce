@@ -1,6 +1,8 @@
 /* eslint-disable linebreak-style */
 import { FavoriteBorder, Star } from '@mui/icons-material';
 import React from 'react';
+import { useParams } from 'react-router-dom'
+import { useGetProductById } from '../../../../queries/useGetProducts.queries'
 import './styles.scss';
 
 export const mockDetailProduct= {
@@ -16,14 +18,16 @@ export const mockDetailProduct= {
 };
   
 export const Detail = () => {
+  const {id} = useParams()
+  const { data: product } = useGetProductById(id)
   return (
     <div className='detail'>
       <div className='detail-content'>
         <div className='product-picture'>
-          <img className='product-img' src={mockDetailProduct.image}></img>
+          <img className='product-img' src={product?.image}></img>
         </div>
         <div className='product-info'>
-          <h3>{mockDetailProduct.name}</h3>
+          <h3>{product?.name}</h3>
           <div className='rating'>
             <Star className='rate'/>
             <Star className='rate'/>
@@ -31,9 +35,9 @@ export const Detail = () => {
             <Star className='rate'/>
             <Star className='rate'/>
           </div>
-          <div className='detail-price'>${mockDetailProduct.price}.00</div>
-          <div className='detail-describe'>{mockDetailProduct.content}</div>
-          <div className='detail-remain'>Available: <span className='remain'>{mockDetailProduct.remain}</span></div>
+          <div className='detail-price'>${product?.price}</div>
+          <div className='detail-describe'>{product?.description}</div>
+          <div className='detail-remain'>Available: <span className='remain'>{product?.totalSupply - product?.bought}</span></div>
           <div className='product-addwish'>
             <FavoriteBorder/>
             <span className='wish-content'>Add to Wishlist</span>

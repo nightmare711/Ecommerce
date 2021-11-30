@@ -1,0 +1,70 @@
+.footer {
+  .footer-email {
+    background-image: url("https://onemart.boostifythemes.com/wp-content/uploads/2021/05/bg_newletter_gadget.jpg");
+    background-position: center;
+    .signupEmail {
+      max-width: 65%;
+      padding: 23px 0;
+      color: white;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      .email-text {
+        width: 50%;
+      }
+      .email-area {
+        width: 50%;
+        display: flex;
+        .text-input {
+          border: none;
+          border-radius: 3px;
+          padding: 0 20px;
+          color: #666666;
+          width: 100%;
+          flex: 1;
+          margin-right: 10px;
+        }
+        .card-btn {
+          color: white;
+          width: 30%;
+          padding: 10px 0px;
+          background: #2a5cb8;
+          border-radius: 3px;
+          font-size: 14px;
+          text-align: center;
+          &:hover {
+            background-color: #c92736;
+          }
+        }
+      }
+    }
+  }
+  .footer-main {
+    background-color: #f8f8f8;
+    font-size: 15px;
+    .footer-content {
+      max-width: 75%;
+      margin: 0 auto;
+      padding-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      .footer-title {
+        font-weight: 600;
+        margin: 20px 0;
+      }
+      .footer-option {
+        margin-bottom: 15px;
+        font-size: 13px;
+        .footer-icon {
+          margin-right: 10px;
+        }
+      }
+      .footer-option:hover {
+        color: #2a5cb8;
+      }
+      .phone {
+        font-size: 25px;
+      }
+    }
+  }
+}

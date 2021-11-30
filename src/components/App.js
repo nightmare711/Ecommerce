@@ -1,5 +1,7 @@
 import React, { Suspense, lazy } from 'react';
-import { Header, Nav } from './components';
+
+import { Header, Nav, Footer } from './components';
+
 import { Switch, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
@@ -35,7 +37,8 @@ function App() {
         <Route path='/cart' exact component={Cart} />
         <Route path='/checkout' exact component={Checkout} />
         <Route path='/' component={HomePage} />
-        
+      <Footer/>
+
      </Switch>
      <ToastContainer
 				position='bottom-right'

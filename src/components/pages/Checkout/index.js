@@ -189,6 +189,7 @@ export const Checkout = () => {
                 <thead>
                   <tr>
                     <th className='product-name'>Product</th>
+                    <th className='product-qty'>Quantity</th>
                     <th className='product-total'>Subtotal</th>
                   </tr>
                 </thead>
@@ -198,6 +199,9 @@ export const Checkout = () => {
                       <td className='product-name'>
                         {product.name}
                         <strong onClick={() => onRemoveProduct(index)} className='product-quantity'>&nbsp;x&nbsp;{product.quantity}</strong>
+                      </td>
+                      <td className='product-qty'>
+                        <span>{item.quantity}</span>
                       </td>
                       <td className='product-total'>
                         <span>${product.price}</span>
@@ -214,12 +218,20 @@ export const Checkout = () => {
                   </tr>
                   <tr className='order-total'>
                     <th className='product-name'>Total</th>
+                    <td className='product-total'></td>
                     <td className='product-total'>
                       <span className='total-cost'>${countSum(data.cart)}.00</span>
                     </td>
                   </tr>
                 </tfoot>
               </table>
+              <div className='method'>
+                <select>
+                  <option>Choose Payment Method</option>
+                  <option>Cash On Delivery</option>
+                  <option>WAL (WastedLands)</option>
+                </select>
+              </div>
               <div className='button'>
                 {isConnect ? isApprove ?  <button onClick={() => {
                   var error = err

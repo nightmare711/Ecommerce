@@ -2,7 +2,7 @@
 import React from 'react';
 import { useRemoveProduct } from '../../services/cart';
 import { DataContext } from '../../contexts/DataContext';
-import { useCheckout } from '../../queries/useOrder.query'
+import { useCheckout, useApprove } from '../../queries/useOrder.query'
 import { useConnectWallet, useCheckConnected } from '../../services/useWalletProviders'
 import './styles.scss';
 
@@ -47,6 +47,9 @@ export const Checkout = () => {
   const isConnect = useCheckConnected();
   const connect = useConnectWallet();
   const onCheckout = useCheckout();
+  const [isApprove, setIsApprove] = React.useState(false)
+  const onApprove = useApprove(() => setIsApprove(true))
+  
   const [info, setInfo] = React.useState({
     totalPrice: 0, 
     firstName: '', 
@@ -59,6 +62,16 @@ export const Checkout = () => {
     addition: '',
     payment: 'coin'
   });
+  const [err,setErr] = React.useState({
+    firstName: false, 
+    lastName: false, 
+    address: false, 
+    country: false,
+    city: false, 
+    phone: false, 
+    email: false,
+    addition: false
+  })
   return (
     <div className='container'>
       <div className='max-w-screen-xl checkout'>
@@ -75,7 +88,7 @@ export const Checkout = () => {
           <p className='lable-text'>If you have a coupon code, please apply it bellow.</p>
           <div className='submitcoupon'>
             <div className='input'>
-              <input type='text' className='input-text' placeholder='Coupon code'></input>
+              <input type='text' className={`input-text `} placeholder='Coupon code'></input>
             </div>
             <div className='button'>
               <button type='submit' className='btn'>
@@ -93,7 +106,7 @@ export const Checkout = () => {
                   <span className='lable-text'>First name&nbsp;</span>
                   <span className='lable-icon'>*</span>
                 </div>
-                <input onChange={(e) => setInfo({...info, firstName: e.target.value})} type='text' className='input-text'></input>
+                <input className={`input-text ${err.firstName ? 'error': ''}`} onChange={(e) => setInfo({...info, firstName: e.target.value})} type='text'></input>
               </div>
               <div className='namespace'></div>
               <div className='name'>
@@ -101,7 +114,7 @@ export const Checkout = () => {
                   <span className='lable-text'>Last name&nbsp;</span>
                   <span className='lable-icon'>*</span>
                 </div>
-                <input onChange={(e) => setInfo({...info, lastName: e.target.value})} type='text' className='input-text'></input>
+                <input className={`input-text ${err.lastName ? 'error': ''}`} onChange={(e) => setInfo({...info, lastName: e.target.value})} type='text'></input>
               </div>
             </div>
 
@@ -116,7 +129,7 @@ export const Checkout = () => {
                 <span className='lable-text'>Country / Region&nbsp;</span>
                 <span className='lable-icon'>*</span>
               </div>
-              <input onChange={(e) => setInfo({...info, country: e.target.value})} type='text' className='input-text'></input>
+              <input className={`input-text ${err.country ? 'error': ''}`} onChange={(e) => setInfo({...info, country: e.target.value})} type='text'></input>
             </div>
             <div className='form-input'>
               <div className='lable'>
@@ -125,7 +138,7 @@ export const Checkout = () => {
               </div>
               <input
                 type='text'
-                className='input-text'
+                className={`input-text ${err.address ? 'error': ''}`}
                 placeholder='House number and street name'
                 onChange={(e) => setInfo({...info, address: e.target.value})}
               ></input>
@@ -141,21 +154,21 @@ export const Checkout = () => {
                 <span className='lable-text'>Town / City&nbsp;</span>
                 <span className='lable-icon'>*</span>
               </div>
-              <input onChange={(e) => setInfo({...info, city: e.target.value})} type='text' className='input-text'></input>
+              <input className={`input-text ${err.city ? 'error': ''}`} onChange={(e) => setInfo({...info, city: e.target.value})} type='text' className={`input-text ${err.city ? 'error': ''}`}></input>
             </div>
             <div className='form-input'>
               <div className='lable'>
                 <span className='lable-text'>Phone&nbsp;</span>
                 <span className='lable-icon'>*</span>
               </div>
-              <input onChange={(e) => setInfo({...info, phone: e.target.value})} type='text' className='input-text'></input>
+              <input onChange={(e) => setInfo({...info, phone: e.target.value})} type='text' className={`input-text ${err.phone ? 'error': ''}`}></input>
             </div>
             <div className='form-input'>
               <div className='lable'>
                 <span className='lable-text'>Email address&nbsp;</span>
                 <span className='lable-icon'>*</span>
               </div>
-              <input onChange={(e) => setInfo({...info, email: e.target.value})} type='text' className='input-text'></input>
+              <input onChange={(e) => setInfo({...info, email: e.target.value})} type='text' className={`input-text ${err.email ? 'error': ''}`}></input>
             </div>
             <div className='additional-info'>
               <h2>Additional information</h2>
@@ -163,7 +176,7 @@ export const Checkout = () => {
               <input
                 type='text'
                 onChange={(e) => setInfo({...info, addition: e.target.value})}
-                className='input-text info'
+                className={`input-text`}
                 placeholder='Notes about your order, e.g. special notes for delivery.'
               ></input>
             </div>
@@ -208,9 +221,95 @@ export const Checkout = () => {
                 </tfoot>
               </table>
               <div className='button'>
-                {isConnect ? <button onClick={() => onCheckout(info, data.cart)} type='submit' className='btn'>
+                {isConnect ? isApprove ?  <button onClick={() => {
+                  var error = err
+                  if(info.address === '') {
+                    error = {
+                      ...error,
+                      address: true
+                    }
+                  } else {
+                    error = {
+                      ...error,
+                      address: false
+                    }
+                  }
+                  if(info.city === '') {
+                    error = {
+                      ...error,
+                      city: true
+                    }
+                  } else {
+                    error = {
+                      ...error,
+                      city: false
+                    }
+                  }
+                  if(info.country === '') {
+                    error = {
+                      ...error,
+                      country: true
+                    }
+                  } else {
+                    error = {
+                      ...error,
+                      country: false
+                    }
+                  }
+                  if(info.email === '') {
+                    error = {
+                      ...error,
+                      email: true
+                    }
+                  } else {
+                    error = {
+                      ...error,
+                      email: false
+                    }
+                  }
+                  if(info.firstName === '') {
+                    error = {
+                      ...error,
+                      firstName: true
+                    }
+                  } else {
+                    error = {
+                      ...error,
+                      firstName: false
+                    }
+                  }
+                  if(info.lastName === '') {
+                    error = {
+                      ...error,
+                      lastName: true
+                    }
+                  } else {
+                    error = {
+                      ...error,
+                      lastName: false
+                    }
+                  }
+                  if(info.phone === '') {
+                    error = {
+                      ...error,
+                      phone: true
+                    }
+                  } else {
+                    error = {
+                      ...error,
+                      phone: false
+                    }
+                  }
+                  console.log(error)
+                  setErr(error)
+                  if(!error.address && !error.city && !error.country && !error.email && !error.firstName && !error.lastName && !error.phone) {
+                    onCheckout(info, data.cart)
+                  }
+                }} type='submit' className='btn'>
 								Place order
-                </button> : <button onClick={() => connect()} type='submit' className='btn'>
+                </button>: <button onClick={() => onApprove()} type='submit' className='btn'>
+								Approve
+                </button>  : <button onClick={() => connect()} type='submit' className='btn'>
 								Connect Metamask
                 </button>}
               </div>

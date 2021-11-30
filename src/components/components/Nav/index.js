@@ -18,7 +18,10 @@ const listNav = [{
 },{
   title: 'More',
   to: '/products/type/More',
-},];
+},{
+  title: 'Checkout',
+  to: '/checkout',
+}];
 
 export const Nav = () => {
   return (

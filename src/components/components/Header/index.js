@@ -1,9 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import {Search as SearchIcon, FavoriteBorder as FavoriteIcon, ShoppingCart as CartIcon} from '@mui/icons-material';
+import { CartOverlay } from '../CartOverlay';
 import './styles.scss';
 
 export const Header = () => {
+  const [showModel, setShowModel] = useState(false);
+
+  const openModel = () => {
+    setShowModel(prev => !prev);
+  };
   return (
     <div className='container header'>
       <div className='max-w-screen-xl header__container'>
@@ -38,7 +44,8 @@ export const Header = () => {
             </div>
             <div className='icon'>
               0,00$
-              <CartIcon />
+              <button className='cart__btn' onClick={openModel}><CartIcon /></button>
+              <CartOverlay showModel={showModel} setShowModel={setShowModel} />
             </div>
           </div>
         </div>

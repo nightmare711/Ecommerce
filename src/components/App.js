@@ -29,14 +29,15 @@ function App() {
         {/* <Route path='/blog/1' component={FirstBlog}/>
         <Route path='/blog/1' component={SecondBlog}/>
         <Route path='/blog/1' component={ThirdBlog}/> */}
-        <Route path='/' component={Checkout}/>
+        {/* <Route path='/' component={Checkout}/> */}
 
-        <Route path='/products' exact component={Products} />
+
+        {/* <Route path='/products' exact component={Products} />
         <Route path={'/products/:id'} exact component={Detail} />
         <Route path={'/products/type/:type'} exact component={Products} />
         <Route path='/cart' exact component={Cart} />
         <Route path='/checkout' exact component={Checkout} />
-        <Route path='/' component={HomePage} />
+        <Route path='/' component={HomePage} /> */}
       <Footer/>
 
      </Switch>

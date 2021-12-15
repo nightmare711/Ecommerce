@@ -11,7 +11,6 @@ export const onCheckStatusOfTransaction = async (hash, count = 0) => {
 		const transaction = await web3.eth.getTransactionReceipt(hash)
 
 		if (transaction) {
-			console.log(transaction)
 			if (transaction.status) {
 				return true
 			}

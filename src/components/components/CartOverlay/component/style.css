@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+  overflow: hidden;
 }
 .product__img {
   height: 80px;

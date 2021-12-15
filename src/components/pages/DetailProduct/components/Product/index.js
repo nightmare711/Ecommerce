@@ -21,41 +21,43 @@ export const Detail = () => {
   const {id} = useParams()
   const { data: product } = useGetProductById(id)
   return (
-    <div className='detail'>
-      <div className='detail-content'>
-        <div className='product-picture'>
-          <img className='product-img' src={product?.image}></img>
+    <div className='container'>
+      <div className='detail max-w-screen-xl'>
+        <div className='detail-content'>
+          <div className='product-picture'>
+            <img className='product-img' src={product?.image}></img>
+          </div>
+          <div className='product-info'>
+            <h3>{product?.name}</h3>
+            <div className='rating'>
+              <Star className='rate'/>
+              <Star className='rate'/>
+              <Star className='rate'/>
+              <Star className='rate'/>
+              <Star className='rate'/>
+            </div>
+            <div className='detail-price'>${product?.price}</div>
+            <div className='detail-describe'>{product?.description}</div>
+            <div className='detail-remain'>Available: <span className='remain'>{product?.totalSupply - product?.bought}</span></div>
+            <div className='product-addwish'>
+              <FavoriteBorder/>
+              <span className='wish-content'>Add to Wishlist</span>
+            </div>
+            <div className='card-btn'>
+              Add to cart
+            </div>
+          </div>
         </div>
-        <div className='product-info'>
-          <h3>{product?.name}</h3>
-          <div className='rating'>
-            <Star className='rate'/>
-            <Star className='rate'/>
-            <Star className='rate'/>
-            <Star className='rate'/>
-            <Star className='rate'/>
-          </div>
-          <div className='detail-price'>${product?.price}</div>
-          <div className='detail-describe'>{product?.description}</div>
-          <div className='detail-remain'>Available: <span className='remain'>{product?.totalSupply - product?.bought}</span></div>
-          <div className='product-addwish'>
-            <FavoriteBorder/>
-            <span className='wish-content'>Add to Wishlist</span>
-          </div>
-          <div className='card-btn'>
-            Add to cart
-          </div>
+        <div className='detail-information'>
+          <ul className='info-list'>
+            <li className='item actived'>DESCRIPTION</li>
+            <li className='item'>ADDTIONAL INFORMATION</li>
+            <li className='item'>REVIEW</li>
+          </ul>
+          <p className='info-content'>
+            {mockDetailProduct.description}
+          </p>
         </div>
-      </div>
-      <div className='detail-information'>
-        <ul className='info-list'>
-          <li className='item actived'>DESCRIPTION</li>
-          <li className='item'>ADDTIONAL INFORMATION</li>
-          <li className='item'>REVIEW</li>
-        </ul>
-        <p className='info-content'>
-          {mockDetailProduct.description}
-        </p>
       </div>
     </div>
   );

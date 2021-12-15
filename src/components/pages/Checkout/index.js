@@ -18,12 +18,12 @@ export const countSum = (listProduct, payment) => {
   var sum =0;
   if(payment === 'coin') {
     listProduct.map(item => {
-      sum += item.price_coin * item.count;
+      sum += item?.price_coin * item?.count;
     });
   } else {
     
     listProduct.map(item => {
-      sum += item.price * item.count;
+      sum += item?.price * item?.count;
     });
   }
   return sum;
@@ -201,7 +201,7 @@ export const Checkout = () => {
                         <strong onClick={() => onRemoveProduct(index)} className='product-quantity'>&nbsp;x&nbsp;{product.quantity}</strong>
                       </td>
                       <td className='product-qty'>
-                        <span>{item.quantity}</span>
+                        <span>{product.quantity}</span>
                       </td>
                       <td className='product-total'>
                         <span>${product.price}</span>

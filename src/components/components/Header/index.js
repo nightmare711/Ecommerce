@@ -1,14 +1,13 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import {Search as SearchIcon, FavoriteBorder as FavoriteIcon, ShoppingCart as CartIcon} from '@mui/icons-material';
-import { CartOverlay } from '../CartOverlay';
+import { onMoveAnimation } from '../../services/hooks/useDevelopUI';
 import './styles.scss';
 
 export const Header = () => {
-  const [showModel, setShowModel] = useState(false);
 
   const openModel = () => {
-    setShowModel(prev => !prev);
+    onMoveAnimation('cart-overlay', 'moveInRight');
   };
   return (
     <div className='container header'>
@@ -45,7 +44,6 @@ export const Header = () => {
             <div className='icon'>
               0,00$
               <button className='cart__btn' onClick={openModel}><CartIcon /></button>
-              <CartOverlay showModel={showModel} setShowModel={setShowModel} />
             </div>
           </div>
         </div>

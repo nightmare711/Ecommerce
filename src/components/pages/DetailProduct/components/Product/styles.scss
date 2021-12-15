@@ -3,21 +3,20 @@
   align-items: center;
   .detail-content {
     display: flex;
-    max-width: 80%;
-    margin: 0 auto;
+    padding: 40px 0px;
+    flex-direction: row;
+    justify-content: space-around;
     .product-picture,
     .product-info {
-      width: 50%;
+      width: 40%;
     }
     .product-picture img {
-      max-width: 100%;
+      width: 100%;
       height: auto;
       vertical-align: middle;
       border: 0;
     }
     .product-info {
-      padding-left: 40px;
-      padding-top: 40px;
       .rating {
         color: #ffc400;
         .rate {

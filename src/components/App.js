@@ -4,6 +4,7 @@ import { Header, Nav, Footer } from './components';
 
 import { Switch, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify'
+import { CartOverlay } from './components/CartOverlay'
 import 'react-toastify/dist/ReactToastify.css'
 
 const HomePage = lazy(() => import('./pages/Home'))
@@ -22,23 +23,21 @@ function App() {
     <Suspense fallback={<h1>Loading</h1>}>
       <Header />
       <Nav />
+      <CartOverlay />
       {/* <Overlay1 /> */}
       <Switch>
         
-        <Route path='/blog/1' exact component={Blog}/>
-        {/* <Route path='/blog/1' component={FirstBlog}/>
-        <Route path='/blog/1' component={SecondBlog}/>
-        <Route path='/blog/1' component={ThirdBlog}/> */}
-        {/* <Route path='/' component={Checkout}/> */}
+        {/* <Route path='/blog/1' exact component={Blog}/>
+        <Route path='/blog/1' component={FirstBlog}/>
+        <Route path='/blog/2' component={SecondBlog}/>
+        <Route path='/blog/3' component={ThirdBlog}/> */}
 
-
-        {/* <Route path='/products' exact component={Products} />
+        <Route path='/products' exact component={Products} />
         <Route path={'/products/:id'} exact component={Detail} />
         <Route path={'/products/type/:type'} exact component={Products} />
         <Route path='/cart' exact component={Cart} />
         <Route path='/checkout' exact component={Checkout} />
-        <Route path='/' component={HomePage} /> */}
-      <Footer/>
+        <Route path='/' component={HomePage} /> 
 
      </Switch>
      <ToastContainer
@@ -52,6 +51,7 @@ function App() {
 				draggable
 				pauseOnHover
 			/>
+       <Footer/>
     </Suspense>
   );
 }

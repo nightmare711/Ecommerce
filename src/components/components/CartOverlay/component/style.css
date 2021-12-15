@@ -9,9 +9,11 @@
   width: 70px;
 }
 .small__cart__title {
-  font-size: 13px;
+  font-size: 14px;
   text-align: left !important;
   cursor: pointer;
+  font-weight: 600;
+  color: black;
 }
 .small__cart__title:hover {
   color: #2a5cbb;
@@ -27,6 +29,7 @@
 .price,
 span {
   font-size: 13px;
+  color: black;
 }
 .blank {
   width: 5px;

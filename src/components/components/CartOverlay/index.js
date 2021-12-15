@@ -5,6 +5,7 @@ import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import { SmallCart } from './component';
 import { onMoveAnimation } from '../../services/hooks/useDevelopUI';
 import { countSum } from '../../pages/Checkout';
+import { Link } from 'react-router-dom';
 import './style.css';
 
 export const CartOverlay = () => {
@@ -26,7 +27,9 @@ export const CartOverlay = () => {
         {data.cart.length !== 0 ?<div className='cart__overlay__product__container'>
           {
             data.cart.map((product, index) => (
-              <SmallCart key={index} imageSrc={product.image} cartTitle={product.name} quantity={product.count} price={product.price}/>      
+              <Link to={`/products/${product._id}`}>
+                <SmallCart key={index} imageSrc={product.image} cartTitle={product.name} quantity={product.count} price={product.price}/>
+              </Link>      
             ))
           }
         </div> : <p className='notification'>No product in cart</p>}

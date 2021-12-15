@@ -2,6 +2,7 @@
 import React from 'react';
 import './styles.scss';
 import { CardProduct } from '../../../../components';
+import { useGetRecentProduct } from '../../../../queries/useGetProducts.queries'
 import './styles.scss';
 
 export const mockProduct = [{
@@ -30,7 +31,8 @@ export const mockProduct = [{
   imageHover: 'https://onemart.boostifythemes.com/gadget/wp-content/uploads/sites/4/2021/06/Layer-192.jpg'
 }];
 
-export const RelatedPro = () => {
+export const RelatedPro = ({type}) => {
+  const recentProduct = useGetRecentProduct(type)
   return (
     <div className='container'>
       <div className='max-w-screen-xl best-seller'>
@@ -41,7 +43,7 @@ export const RelatedPro = () => {
         </div>
         <div className='best-seller__products'>
           {
-            mockProduct.map((product, index) => <CardProduct key={index} product={product} />)
+            recentProduct?.map((product, index) => <CardProduct key={index} product={product} />)
           }
         </div>
       </div>

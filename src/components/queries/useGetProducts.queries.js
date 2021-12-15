@@ -2,12 +2,10 @@
 // import { DataContext } from 'context/DataContext';
 import { useQuery } from 'react-query';
 import { API_TEST } from '../constants/API';
-import { useParams } from 'react-router-dom';
 import React from 'react';
 // import { toast } from 'react-toastify';
 
-export const useGetProducts = () => {
-  const {type} = useParams();
+export const useGetProducts = (type) => {
 
   return useQuery(['useGetProducts.name'], () => {
     if(type) {

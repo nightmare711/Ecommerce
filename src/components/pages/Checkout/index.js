@@ -226,10 +226,10 @@ export const Checkout = () => {
                 </tfoot>
               </table>
               <div className='method'>
-                <select>
-                  <option>Choose Payment Method</option>
-                  <option>Cash On Delivery</option>
-                  <option>WAL (WastedLands)</option>
+                <select onChange={(e) => setInfo({...info, payment: e.target.value})}>
+                  <option value='coin'>Choose Payment Method</option>
+                  <option value='cod'>Cash On Delivery</option>
+                  <option value='coin'>WAL (WastedLands)</option>
                 </select>
               </div>
               <div className='button'>

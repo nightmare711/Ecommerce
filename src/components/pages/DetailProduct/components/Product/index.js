@@ -1,8 +1,7 @@
 /* eslint-disable linebreak-style */
 import { FavoriteBorder, Star } from '@mui/icons-material';
 import React from 'react';
-import { useParams } from 'react-router-dom'
-import { useGetProductById } from '../../../../queries/useGetProducts.queries'
+import { useHandleAddCart } from '../../../../services/cart';
 import './styles.scss';
 
 export const mockDetailProduct= {
@@ -17,9 +16,8 @@ export const mockDetailProduct= {
   description:'Donec accumsan auctor iaculis. Sed suscipit arcu ligula, at egestas magna molestie a. Proin ac ex maximus, ultrices justo eget, sodales orci. Aliquam egestas libero ac turpis pharetra, in vehicula lacus scelerisque. Vestibulum ut sem laoreet, feugiat tellus at, hendrerit arcu. Nunc lacus elit, faucibus ac laoreet sed, dapibus ac mi. Maecenas eu ante a elit tempus fermentum. Aliquam commodo tincidunt semper. Phasellus accumsan, justo ac mollis pharetra, ex dui pharetra nisl, a scelerisque ipsum nulla ac sem. Cras eu risus urna. Duis lorem sapien, congue eget nisl sit amet, rutrum faucibus elit.',
 };
   
-export const Detail = () => {
-  const {id} = useParams()
-  const { data: product } = useGetProductById(id)
+export const Detail = ({product}) => {
+  const onAddToCart = useHandleAddCart()
   return (
     <div className='container'>
       <div className='detail max-w-screen-xl'>
@@ -43,7 +41,7 @@ export const Detail = () => {
               <FavoriteBorder/>
               <span className='wish-content'>Add to Wishlist</span>
             </div>
-            <div className='card-btn'>
+            <div onClick={() => onAddToCart(product)} className='card-btn'>
               Add to cart
             </div>
           </div>

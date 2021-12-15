@@ -6,15 +6,18 @@ export const useHandleAddCart = () => {
   const data = React.useContext(DataContext);
   return (product) => {
     var cart = data.cart;
+   
     const productIndex = cart.findIndex(productInCart => productInCart._id === product._id)
     if(productIndex !== -1) {
         cart[productIndex] = {...cart[productIndex], count: cart[productIndex].count + 1}
+        console.log('##cart', cart)
     } else {
         cart.push({...product, count: 1});
     }
     toast.success('Added to cart');
     localStorage.setItem('cart_item', JSON.stringify(cart))
     data.setCart(cart);
+    data.setCount(data.count + 1);
   };
 };
 

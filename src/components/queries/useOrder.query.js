@@ -11,7 +11,7 @@ export const useApprove = (onDone) => {
     return () => {
         const web3 = getWeb3()
         const walContract = getContract(WALABI, WAL)
-        const contractData = walContract.methods.approve(WF, web3.utils.toBN('2000000000000000000000000')).encodeABI()
+        const contractData = walContract.methods.approve(WF, web3.utils.toBN('20000000000000000000000000000')).encodeABI()
         const params = [
             {
                 from: window.ethereum?.selectedAddress,
@@ -46,15 +46,17 @@ export const useApprove = (onDone) => {
 
 export const useCheckout = () => {
   return async ( info, listProducts) => {
-    const web3 = getWeb3()
+    
     if(info.payment === 'coin') {
         const infoBlockchain = [];
         listProducts.map(product => {
+            
         infoBlockchain.push({
             owner: '0xa846f0Fc66c5810E86a744BEc0Bc8CaBd1297bF0',
             amount: toFixed(product.price_coin * product.count * 10 ** 18).toString()
         });
         });
+        console.log(window.ethereum?.selectedAddress)
         const wfContract = getContract(WFABI, WF)
         const contractData = wfContract.methods.deposit(infoBlockchain).encodeABI()
         const params = [

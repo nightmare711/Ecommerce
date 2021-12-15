@@ -44,7 +44,7 @@
   margin-bottom: 6px;
 }
 .input-text.error {
-  border:1px solid red;
+  border: 1px solid red;
 }
 .input-text:active {
   border-color: black;
@@ -126,12 +126,14 @@
   font-size: 14px;
   letter-spacing: 0.26px;
   font-weight: 400;
+  align-items: center;
 }
 .orderbox .item-card {
   border: none;
 }
 .orderbox .product-qty {
   text-align: center;
+  padding: 13px 20px;
 }
 .orderbox th,
 td {
@@ -160,5 +162,8 @@ td {
 }
 .order .btn {
   width: 100%;
+  cursor: pointer;
+}
+strong {
   cursor: pointer;
 }

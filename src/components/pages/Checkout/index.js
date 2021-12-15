@@ -190,7 +190,7 @@ export const Checkout = () => {
                   <tr>
                     <th className='product-name'>Product</th>
                     <th className='product-qty'>Quantity</th>
-                    <th className='product-total'>Subtotal</th>
+                    <th className='product-qty'>Price</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -201,21 +201,15 @@ export const Checkout = () => {
                         <strong onClick={() => onRemoveProduct(index)} className='product-quantity'>&nbsp;x&nbsp;{product.quantity}</strong>
                       </td>
                       <td className='product-qty'>
-                        <span>{product.quantity}</span>
+                        <span>{product.count}</span>
                       </td>
-                      <td className='product-total'>
+                      <td className='product-qty'>
                         <span>${product.price}</span>
                       </td>
                     </tr>
                   ))}                               
                 </tbody>
                 <tfoot>
-                  <tr className='card-subtotal'>
-                    <th className='product-name'>Subtotal</th>
-                    <td className='product-total'>
-                      <span>${countSum(data.cart)}.00</span>
-                    </td>
-                  </tr>
                   <tr className='order-total'>
                     <th className='product-name'>Total</th>
                     <td className='product-total'></td>

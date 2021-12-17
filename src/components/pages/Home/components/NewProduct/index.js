@@ -1,7 +1,6 @@
 import React from 'react';
 import './styles.scss';
 
-
 export const NewProduct = () => {
   return (
     <div className='container'>

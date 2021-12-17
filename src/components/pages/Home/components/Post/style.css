@@ -1,0 +1,20 @@
+.post {
+  border-bottom: 1px solid #eeeeee;
+  position: relative;
+}
+.post-title {
+  font-size: 26px;
+}
+.border {
+  width: 200px;
+  height: 1px;
+  background-color: #2a5cb8;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateY(100%);
+}
+.post__container {
+  display: flex;
+  justify-content: space-between;
+}

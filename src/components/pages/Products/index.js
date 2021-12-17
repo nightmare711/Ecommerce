@@ -42,6 +42,7 @@ export const Products = () => {
   const { data: products, refetch } = useGetProducts(type)
   const data = React.useContext(DataContext)
   console.log('products', products)
+  
   React.useEffect(() => {
     refetch()
     data.setCount(data.count + 1)
@@ -52,7 +53,7 @@ export const Products = () => {
         <div className='products__header'>Shop</div>
         <div className='products__container'>
           {
-            products?.map((product, index) => <CardProduct product={product} key={index} />)
+            products ? products?.map((product, index) => <CardProduct product={product} key={index} />) : null
           }
         </div>
       </div>

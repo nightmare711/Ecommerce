@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 import './styles.scss';
 
 const listNav = [{
+  title: 'All products',
+  to: '/products',
+},{
   title: 'Watch',
   to: '/products/type/Watch',
 },{
@@ -18,9 +21,6 @@ const listNav = [{
 },{
   title: 'More',
   to: '/products/type/More',
-},{
-  title: 'Checkout',
-  to: '/checkout',
 }];
 
 export const Nav = () => {

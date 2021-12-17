@@ -1,2 +1,2 @@
-export const WF = '0xf17D34403d8Df2da043E436ba206330BEB413b49';
+export const WF = '0x5c8B6B858cCC79E9cEd44182e51B9DF892b1dF10';
 export const WAL = '0xaf2c3c7888493db7323bd28808bc0729ec6fd975';

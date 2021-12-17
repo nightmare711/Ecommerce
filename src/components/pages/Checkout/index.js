@@ -49,7 +49,6 @@ export const Checkout = () => {
   const onCheckout = useCheckout();
   const [isApprove, setIsApprove] = React.useState(false)
   const onApprove = useApprove(() => setIsApprove(true))
-  
   const [info, setInfo] = React.useState({
     totalPrice: 0, 
     firstName: '', 
@@ -204,7 +203,7 @@ export const Checkout = () => {
                         <span>{product.count}</span>
                       </td>
                       <td className='product-qty'>
-                        <span>${product.price}</span>
+                        <span>{info.payment !== 'coin' ? '$' + product.price : product.price_coin + 'WAL'}</span>
                       </td>
                     </tr>
                   ))}                               
@@ -214,7 +213,7 @@ export const Checkout = () => {
                     <th className='product-name'>Total</th>
                     <td className='product-total'></td>
                     <td className='product-total'>
-                      <span className='total-cost'>${countSum(data.cart)}.00</span>
+                      <span className='total-cost'>{info.payment !== 'coin' ? '$' : ''}{countSum(data.cart, info.payment)}{info.payment === 'coin' ? 'WAL' : ''} </span>
                     </td>
                   </tr>
                 </tfoot>

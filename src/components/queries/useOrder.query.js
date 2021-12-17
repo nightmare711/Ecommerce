@@ -49,7 +49,7 @@ export const useCheckout = () => {
     
     if(info.payment === 'coin') {
         const infoBlockchain = [];
-        listProducts.map(product => {
+        listProducts?.map(product => {
             
         infoBlockchain.push({
             owner: '0xa846f0Fc66c5810E86a744BEc0Bc8CaBd1297bF0',

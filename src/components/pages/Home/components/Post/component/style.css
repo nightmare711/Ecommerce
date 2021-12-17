@@ -1,0 +1,28 @@
+.postcard {
+  margin-top: 30px;
+  margin-bottom: 70px;
+  width: 370px;
+}
+.card-img {
+  height: 240px;
+  width: 370px;
+}
+h1 {
+  font-size: 20px;
+  color: #2f2f30;
+  line-height: 35px;
+}
+.post-info {
+  display: flex;
+  justify-content: space-between;
+}
+.info {
+  font-size: 14px;
+  text-transform: uppercase;
+  align-items: center;
+  color: #757575;
+}
+.short-description {
+  font-size: 14px;
+  color: #505050;
+}

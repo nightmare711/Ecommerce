@@ -96,3 +96,6 @@
 .blog__tag a:hover {
   color: #7f8288;
 }
+.blog__page {
+  margin: 50px 0;
+}
